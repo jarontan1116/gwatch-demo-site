@@ -11,7 +11,13 @@ const navToggle = document.getElementById('navToggle');
 const mobilePanel = document.getElementById('mobilePanel');
 if (navToggle && mobilePanel) {
   navToggle.addEventListener('click', () => {
-    mobilePanel.classList.toggle('open');
+    const isOpen = mobilePanel.style.display === 'flex';
+    mobilePanel.style.display = isOpen ? 'none' : 'flex';
+  });
+  document.addEventListener('click', (e) => {
+    if (mobilePanel.style.display === 'flex' && !mobilePanel.contains(e.target) && e.target !== navToggle) {
+      mobilePanel.style.display = 'none';
+    }
   });
 }
 
