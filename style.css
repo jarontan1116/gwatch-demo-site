@@ -266,6 +266,14 @@
     .story-card .story-text h3{font-size:0.85rem;}
     .story-card .story-text p{font-size:0.68rem;}
   }
+  @media (max-width:600px){
+    .rail{gap:0.6rem;}
+    .lot-card{width:150px; padding:0.9rem;}
+    .lot-card .lot-tag{font-size:0.55rem; padding:0.2rem 0.4rem; top:0.6rem; right:0.6rem;}
+    .lot-card h3{font-size:1rem;}
+    .lot-card .ref{font-size:0.65rem;}
+    .lot-card .price-note{font-size:0.72rem; margin:0.4rem 0 0.6rem;}
+  }
 
   /* journal / blog cards */
   .blog-grid{grid-template-columns:repeat(auto-fill,minmax(270px,1fr));}
@@ -295,6 +303,10 @@
     .navlinks-left, .navlinks-right-wrap .navlinks{display:none;}
     .navlinks-right-wrap > .btn{display:none;}
     .navlinks-right-wrap{justify-self:stretch;}
+    /* both logo and toggle are absolutely positioned below, so .nav has no in-flow
+       content left to size itself by — without this it collapses and the logo spills
+       out of the header into whatever is underneath it */
+    .nav{min-height:84px;}
     /* logo dead-center and hamburger pinned left, independent of any sibling content */
     .brandmark{position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);}
     .navtoggle{
