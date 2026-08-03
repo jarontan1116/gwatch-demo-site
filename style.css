@@ -259,7 +259,13 @@
   .story-card .story-text{position:absolute; left:0; right:0; bottom:0; padding:1.3rem 1.1rem;}
   .story-card .story-text h3{color:#fff; font-size:1.1rem; line-height:1.25; margin-bottom:0.4rem;}
   .story-card .story-text p{color:rgba(255,255,255,0.82); font-size:0.78rem; line-height:1.4; margin:0;}
-  @media (max-width:600px){.story-card{width:190px;}}
+  @media (max-width:600px){
+    .story-rail{gap:0.6rem;}
+    .story-card{width:130px;}
+    .story-card .story-text{padding:0.8rem 0.7rem;}
+    .story-card .story-text h3{font-size:0.85rem;}
+    .story-card .story-text p{font-size:0.68rem;}
+  }
 
   /* journal / blog cards */
   .blog-grid{grid-template-columns:repeat(auto-fill,minmax(270px,1fr));}
@@ -281,13 +287,20 @@
   .related-watches h2{margin-bottom:1.5rem;}
 
   /* multi-page nav */
-  .nav{display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1fr); align-items:center; gap:1rem; padding:0.85rem clamp(1.25rem,4vw,2.5rem);}
+  .nav{position:relative; display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1fr); align-items:center; gap:1rem; padding:0.85rem clamp(1.25rem,4vw,2.5rem);}
   .navlinks-left{justify-self:start;}
   .navlinks-right-wrap{justify-self:end; display:flex; align-items:center; gap:1.5rem; min-width:0;}
   .navlinks-left, .navlinks-right-wrap .navlinks{display:flex; gap:2rem; font-size:0.86rem; letter-spacing:0.02em;}
   @media (max-width:860px){
     .navlinks-left, .navlinks-right-wrap .navlinks{display:none;}
     .navlinks-right-wrap > .btn{display:none;}
+    .navlinks-right-wrap{justify-self:stretch;}
+    /* logo dead-center and hamburger pinned left, independent of any sibling content */
+    .brandmark{position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);}
+    .navtoggle{
+      position:absolute; left:clamp(1.25rem,4vw,2.5rem); top:50%; transform:translateY(-50%);
+      display:inline-flex; font-size:1.5rem; line-height:1; padding:0.45rem 0.65rem;
+    }
   }
   .mobile-panel{
     display:none; position:absolute; top:100%; right:1rem; left:1rem; background:var(--bg-panel); border:1px solid var(--rule);
