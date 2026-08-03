@@ -227,7 +227,7 @@
     width:112px; height:112px; border-radius:50%; overflow:hidden; margin:0 auto 0.75rem;
     border:1px solid var(--rule); background:var(--bg-panel); transition:border-color .2s ease, transform .2s ease;
   }
-  .brand-chip .chip-photo img{width:100%; height:100%; object-fit:cover; display:block;}
+  .brand-chip .chip-photo img{width:100%; height:100%; object-fit:cover; object-position:50% 62%; transform:scale(1.4); display:block;}
   .brand-chip span{font-size:0.78rem; letter-spacing:0.02em; display:block; font-weight:600;}
   .brand-chip:hover{color:var(--ink);}
   .brand-chip:hover .chip-photo{border-color:var(--brass); transform:translateY(-3px);}
